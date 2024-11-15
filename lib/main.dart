@@ -5,6 +5,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,6 +16,8 @@ class MyApp extends StatelessWidget {
 }
 
 class DockPage extends StatefulWidget {
+  const DockPage({super.key});
+
   @override
   _DockPageState createState() => _DockPageState();
 }
@@ -88,7 +92,7 @@ class _DockPageState extends State<DockPage> {
       child: DragTarget<DockItemData>(
         builder: (context, candidateData, rejectedData) {
           return AnimatedSwitcher(
-            duration: Duration(milliseconds: 800),
+            duration: const Duration(milliseconds: 800),
             child: _buildDockItem(item, Colors.blue),
           );
         },
